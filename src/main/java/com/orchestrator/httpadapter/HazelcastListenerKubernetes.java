@@ -10,11 +10,12 @@ import com.hazelcast.config.JoinConfig;
 import com.hazelcast.config.NetworkConfig;
 
 @Configuration
-@Profile("openshift")
 public class HazelcastListenerKubernetes {
 
 	@Bean
 	public Config hazelCastConfig() {
+		System.out.println("Inside openshift profile Hazelcast Listener");
+
 		Config config = new Config();
 		NetworkConfig network = config.getNetworkConfig();
 		network.setPort(5701).setPortCount(20);
