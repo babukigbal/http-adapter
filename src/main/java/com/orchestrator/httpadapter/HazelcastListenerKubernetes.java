@@ -10,7 +10,7 @@ import com.hazelcast.config.JoinConfig;
 import com.hazelcast.config.NetworkConfig;
 
 @Configuration
-@Profile("kubernetes")
+@Profile("openshift")
 public class HazelcastListenerKubernetes {
 
 	@Bean
