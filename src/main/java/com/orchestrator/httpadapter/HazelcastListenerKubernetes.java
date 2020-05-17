@@ -10,8 +10,7 @@ import com.hazelcast.config.JoinConfig;
 import com.hazelcast.config.NetworkConfig;
 
 @Configuration
-@Profile("laptop")
-public class HazelcastListener {
+public class HazelcastListenerKubernetes {
 
 	@Bean
 	public Config hazelCastConfig() {
@@ -21,7 +20,7 @@ public class HazelcastListener {
 		network.setPortAutoIncrement(true);
 		JoinConfig join = network.getJoin();
 		join.getMulticastConfig().setEnabled(false);
-//	    join.getKubernetesConfig().setEnabled(true);
+	    join.getKubernetesConfig().setEnabled(true);
 		config.setInstanceName("hazelcast-instance");
 		return config;
 	}
