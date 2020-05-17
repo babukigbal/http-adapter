@@ -10,6 +10,7 @@ import com.hazelcast.config.JoinConfig;
 import com.hazelcast.config.NetworkConfig;
 
 @Configuration
+@Profile("kubernetes")
 public class HazelcastListenerKubernetes {
 
 	@Bean
