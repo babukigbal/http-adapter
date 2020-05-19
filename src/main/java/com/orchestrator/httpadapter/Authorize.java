@@ -5,6 +5,8 @@ import java.util.Random;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hazelcast.client.HazelcastClient;
+import com.hazelcast.client.config.ClientConfig;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
@@ -16,8 +18,8 @@ import common.FinancialTransaction;
 public class Authorize {
 	HazelcastInstance hazelcastInstance;
 	
-	Authorize(){
-		this.hazelcastInstance=Hazelcast.newHazelcastInstance();
+	Authorize(HazelcastInstance hazelcastInstance){
+		this.hazelcastInstance=hazelcastInstance;
 	}
 	
     @GetMapping("/authorize")
